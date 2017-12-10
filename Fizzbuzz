@@ -1,10 +1,21 @@
-numero = int(raw_input("Inserta un numero del 1 al 100: "))
 
-if numero % 3 == 0 and numero % 5 == 0:
-	print "fizzbuzz"
-elif numero % 3 == 0:
-	print "fizz"
-elif numero % 5 == 0:
-	print "buzz"
-else:
-	print numero
+# -*- coding: utf-8 -*-
+menus = {}
+
+while True:
+    plato = raw_input("Introduce el nombre del plato:")
+    precio = raw_input("Especifica ahora el precio del %s " % plato)
+    menus[plato] = precio
+
+    siguiente_plato = raw_input("¿Quieres añadir más platos?:(si/no)")
+
+    if siguiente_plato == "no":
+        break
+
+
+print "Tu menu consta de %s" % menus
+
+with open("menus.txt", "w+") as archivo:
+    for dish in menus : 
+        archivo.write("%s, %s" % (dish, menus[dish])) 
+        #esta última parte la he copiado de la solución, pero no entiendo la sintaxis con "dish. Te la pregunto mañana"
