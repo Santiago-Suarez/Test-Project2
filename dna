@@ -1,0 +1,36 @@
+dna_sequence: "AAGATGCCATTGTCCCCCGGCCTCCTGCTGCTGCTGCTCTCCGGGGCCACGGCCACCGCTGCCCTGCCCCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCCTCCTGACTTTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGAAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGCAATCCGCGCGCCGGGACAGAATGCCCTGCAGGAACTTCTTCTGGAAGACCTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAGTTTAATTACAGACCTGAA"
+suspects_list = []
+
+hair_color = {"black": "CCAGCAATCGC", "brown": "GCCAGTGCCG", "blonde": "TTAGCTATCGC"}
+facial shape = {"square": "GCCACGG", "round": "ACCACAA", "oval": "AGGCCTCA"}
+eye_color = {"blue": "TTGTGGTGGC", "green": "GGGAGGTGGC", "brown": "AAGTAGTGAC"}
+gender = {"female": "TGAAGGACCTTC", "male": "TGCAGGAACTTC"}
+race = {"white": "AAAACCTCA", "black": "CGACTACAG", "asian": "CGCGGGCCG"}
+
+
+class person:
+    def __init__(self, name, hair_color, facial_shape, eye_color, gender, race):
+        self.name = name
+        self.hair_color = hair_color
+        self.facial_shape = facial_shape
+        self.eye_color = eye_color
+        self.gender = gender
+        self.race = race
+
+
+def add_person(suspects_list):
+
+    name = raw_input("Enter the name of the suspect:")
+    gender = raw_input("Was the suspect male or female? (male/female)")
+    hair_color = raw_input("What color hair did the suspect have?: (black, brown, blond)")
+    facial_shape = raw_input("What facial shape did the suspect have?: (square,round, oval)")
+    eye_color = raw_input("What color eyes did the suspect have?: (blue, green, brown)")
+    race = raw_input("What ethnic group does the suspect belong to?: (white, black, asian)")
+
+    new_suspect = person(name=name, gender=gender, hair_color=hair_color, facial_shape=facial_shape, eye_color=eye_color, race=race)
+
+
+def main():
+    for new_suspect in suspects_list:
+        if gender not in dna_sequence:
+            break
