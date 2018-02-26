@@ -1,0 +1,26 @@
+def main():
+    print "With this program you can register all your business cars"
+
+    car_list = []
+    for item in car_list:
+        with open("car.txt", "r") as car_file:
+
+class car(object):
+    def __init__(self, brand, model, km, service_date):
+        self.brand = brand
+        self.model = model
+        self.km = km
+        self.service_date = service_date
+
+def add_car_object(car_list):
+    brand = raw_input("Please enter the brand of the car: ")
+    model = raw_input("Please enter the model of the car: ")
+    km = raw_input("Please enter the mileage of the car: ")
+    service_date = raw_input("Please enter the date it was serviced: ")
+
+    new_entry = create_car_object(brand, model, km, service_date)
+
+def create_car_object(brand, model, km, service_date):
+    new_car = car(brand=brand, model=model, km=km, service_date=service_date)
+
+    car_list.append(new_car)
